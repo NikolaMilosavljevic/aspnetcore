@@ -23,11 +23,13 @@ public class HttpContextAccessor : IHttpContextAccessor
         set
         {
             var holder = _httpContextCurrent.Value;
+#pragma warning disable IDE0031
             if (holder != null)
             {
                 // Clear current HttpContext trapped in the AsyncLocals, as its done.
                 holder.Context = null;
             }
+#pragma warning restore IDE0031
 
             if (value != null)
             {

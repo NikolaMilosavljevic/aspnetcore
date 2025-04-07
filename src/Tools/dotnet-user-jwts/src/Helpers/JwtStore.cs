@@ -18,10 +18,12 @@ public class JwtStore
         Load();
 
         // For testing.
+#pragma warning disable IDE0031
         if (program is not null)
         {
             program.UserJwtsFilePath = _filePath;
         }
+#pragma warning restore IDE0031
     }
 
     public IDictionary<string, Jwt> Jwts { get; private set; } = new Dictionary<string, Jwt>();

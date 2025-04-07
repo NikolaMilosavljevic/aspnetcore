@@ -59,9 +59,11 @@ internal static class HttpExtensions
         }
 
         var routeValuesFeature = context.Features.Get<IRouteValuesFeature>();
+#pragma warning disable IDE0031
         if (routeValuesFeature != null)
         {
             routeValuesFeature.RouteValues = null!;
         }
+#pragma warning restore IDE0031
     }
 }
